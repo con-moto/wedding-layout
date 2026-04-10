@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Wix Madefor Text";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./WixMadeforText-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Wix Madefor Text";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./WixMadeforText-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Wix Madefor Text";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./WixMadeforText-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Wix Madefor Text";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./WixMadeforText-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Laptev-Brush";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./Laptev-Brush.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Laptev-Brush";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./Laptev-Brush.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bohemia Pink";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./BohemaPinkRegular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Celestina";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./Celestina.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Czizh-Body";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./Czizh-Body.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Loki-Cola";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./Loki-ColaRUS.woff2") format("woff2");
+}
