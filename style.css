@@ -1133,13 +1133,13 @@ a {
   background: transparent;
 }
 
-/* НОВОЕ: имя/фамилия в деталях */
+/* Имя и фамилия в деталях */
 
 .details-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 26px;
+  gap: 18px;
+  margin-bottom: 28px;
 }
 
 .details-field {
@@ -1148,7 +1148,7 @@ a {
   gap: 6px;
 }
 
-/* label + input в тёмной секции */
+/* label + input внутри тёмной секции */
 
 .details .form-label {
   font-size: var(--font-size-sm);
@@ -1159,20 +1159,25 @@ a {
 }
 
 .details .input {
-  background: rgba(255, 255, 255, 0.06);
+  width: 100%;
+  padding: 9px 14px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: var(--font-size-base);
+  outline: none;
+  background: rgba(255, 255, 255, 0.04);
   color: var(--color-text-contrast);
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .details .input::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.52);
 }
 
 .details .input:focus {
   border-color: var(--color-accent-warm-5);
+  background: rgba(255, 255, 255, 0.09);
   box-shadow: 0 0 0 1px var(--color-shadow-focus);
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .details-block + .details-block {
@@ -1440,10 +1445,11 @@ a {
     font-size: var(--font-size-md);
   }
 
-  /* имя/фамилия в одну колонку на мобилке */
+  /* имя/фамилия в одну колонку */
   .details-row {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 14px;
+    margin-bottom: 24px;
   }
 }
 
