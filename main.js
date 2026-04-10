@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       rsvpStatus.classList.remove('rsvp-status--success', 'rsvp-status--error');
 
       const formData = new FormData(rsvpForm);
+      // формально FormSubmit принимает FormData, никаких доп. хедеров не нужно [web:21].
 
       try {
         const response = await fetch(rsvpForm.action, {
@@ -119,37 +120,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("details-form");
+/* ====== DETAILS FORM (еда/алкоголь/дети) ====== */
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('details-form');
   if (!form) return;
 
-  const statusEl = document.getElementById("details-status");
+  const statusEl = document.getElementById('details-status');
 
-  form.addEventListener("submit", async function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    statusEl.textContent = "Отправляем...";
-    statusEl.className = "details-status";
+    statusEl.textContent = 'Отправляем...';
+    statusEl.className = 'details-status';
 
     const formData = new FormData(form);
 
     try {
       const response = await fetch(form.action, {
-        method: "POST",
+        method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
-        statusEl.textContent = "Спасибо! Ваши ответы отправлены.";
-        statusEl.classList.add("details-status--success");
+        statusEl.textContent = 'Спасибо! Ваши ответы отправлены.';
+        statusEl.classList.add('details-status--success');
         form.reset();
       } else {
-        statusEl.textContent = "Что-то пошло не так. Попробуйте ещё раз.";
-        statusEl.classList.add("details-status--error");
+        statusEl.textContent = 'Что-то пошло не так. Попробуйте ещё раз.';
+        statusEl.classList.add('details-status--error');
       }
     } catch (err) {
-      statusEl.textContent = "Ошибка сети. Попробуйте ещё раз позже.";
-      statusEl.classList.add("details-status--error");
+      statusEl.textContent = 'Ошибка сети. Попробуйте ещё раз позже.';
+      statusEl.classList.add('details-status--error');
     }
   });
 });

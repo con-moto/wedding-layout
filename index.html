@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Приглашение на свадьбу · Анжелика и Артур</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./fonts/fonts.css">
-  <link rel="stylesheet" href="./style.css">
+  /fonts/fonts.css">
+  /style.css">
 </head>
 <body>
 
@@ -184,27 +184,36 @@
       id="details-form"
       class="details-form"
       method="POST"
-      action="https://example-form-service.com/submit"
+      action="https://formsubmit.co/ariadna.999@yandex.ru"
     >
+      <!-- обязательные скрытые поля для FormSubmit -->
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="Анкета гостя · Детали (еда/алкоголь/дети)">
+      <input type="hidden" name="_captcha" value="false">
+      <!-- хонипот для ботов -->
+      <input type="text" name="_honey" style="display:none">
+      <!-- можно указать, что это форма деталей -->
+      <input type="hidden" name="form_type" value="details-form">
+
       <div class="details-block">
         <h3 class="details-question">
           Есть ли у вас особые предпочтения по еде
         </h3>
         <div class="details-options">
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="нет" checked />
+          abel class="details-option">
+            <input type="radio" name="food_preference" value="нет" checked>
             <span>нет</span>
           </label>
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="не ем мясо" />
+          abel class="details-option">
+            <input type="radio" name="food_preference" value="не ем мясо">
             <span>не ем мясо</span>
           </label>
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="не ем рыбу" />
+          abel class="details-option">
+            <input type="radio" name="food_preference" value="не ем рыбу">
             <span>не ем рыбу</span>
           </label>
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="вегетарианец" />
+          abel class="details-option">
+            <input type="radio" name="food_preference" value="вегетарианец">
             <span>вегетарианец</span>
           </label>
         </div>
@@ -215,28 +224,28 @@
           Какой алкоголь вы предпочитаете?
         </h3>
         <div class="details-options">
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Красное вино" />
+          abel class="details-option">
+            <input type="checkbox" name="alcohol[]" value="Красное вино">
             <span>Красное вино</span>
           </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Белое вино" />
+          abel class="details-option">
+            <input type="checkbox" name="alcohol[]" value="Белое вино">
             <span>Белое вино</span>
           </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Шампанское" />
+          abel class="details-option">
+            <input type="checkbox" name="alcohol[]" value="Шампанское">
             <span>Шампанское</span>
           </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Виски/коньяк" />
+          abel class="details-option">
+            <input type="checkbox" name="alcohol[]" value="Виски/коньяк">
             <span>Виски/коньяк</span>
           </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Водка" />
+          abel class="details-option">
+            <input type="checkbox" name="alcohol[]" value="Водка">
             <span>Водка</span>
           </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Не буду пить алкоголь" />
+          abel class="details-option">
+            <input type="checkbox" name="alcohol[]" value="Не буду пить алкоголь">
             <span>Не буду пить алкоголь</span>
           </label>
         </div>
@@ -247,12 +256,12 @@
           Будет ли с вами на празднике ребенок?
         </h3>
         <div class="details-options">
-          <label class="details-option">
-            <input type="radio" name="child" value="Да" />
+          abel class="details-option">
+            <input type="radio" name="child" value="Да">
             <span>Да</span>
           </label>
-          <label class="details-option">
-            <input type="radio" name="child" value="Нет" checked />
+          abel class="details-option">
+            <input type="radio" name="child" value="Нет" checked>
             <span>Нет</span>
           </label>
         </div>
@@ -318,11 +327,21 @@
       id="rsvp-form"
       class="rsvp-form"
       method="POST"
-      action="https://example-form-service.com/submit"
+      action="https://formsubmit.co/ariadna.999@yandex.ru"
     >
+      <!-- обязательные скрытые поля для FormSubmit -->
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_subject" value="Анкета гостя · RSVP ответ">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="form_type" value="rsvp-form">
+      <!-- можно переопределить redirect, если хочешь отдельную страницу благодарности:
+      <input type="hidden" name="_next" value="https://example.com/thanks.html">
+      -->
+
       <div class="rsvp-row">
         <div class="rsvp-field">
-          <label for="field-name" class="form-label">Имя</label>
+          abel for="field-name" class="form-label">Имя</label>
           <input
             class="input"
             type="text"
@@ -333,7 +352,7 @@
           >
         </div>
         <div class="rsvp-field">
-          <label for="field-surname" class="form-label">Фамилия</label>
+          abel for="field-surname" class="form-label">Фамилия</label>
           <input
             class="input"
             type="text"
@@ -348,20 +367,20 @@
       <div class="rsvp-field">
         <span class="rsvp-label">Вы сможете присутствовать?</span>
         <div class="rsvp-options">
-          <label class="rsvp-option">
+          abel class="rsvp-option">
             <input
               type="radio"
               name="attendance"
-              value="yes"
+              value="Да, с радостью буду"
               required
             >
             <span>Да, с радостью буду</span>
           </label>
-          <label class="rsvp-option">
+          abel class="rsvp-option">
             <input
               type="radio"
               name="attendance"
-              value="no"
+              value="К сожалению, не смогу"
             >
             <span>К сожалению, не смогу</span>
           </label>
@@ -369,7 +388,7 @@
       </div>
 
       <div class="rsvp-field">
-        <label for="field-message" class="form-label">Комментарий (по желанию)</label>
+        abel for="field-message" class="form-label">Комментарий (по желанию)</label>
         <textarea
           class="textarea"
           id="field-message"
