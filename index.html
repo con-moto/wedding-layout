@@ -185,14 +185,39 @@
       id="details-form"
       class="details-form"
       method="POST"
-      action="https://formsubmit.co/symphony.art@mail.ru"
+      action="https://formspree.io/f/mkopllen"
       enctype="multipart/form-data"
     >
-      <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_subject" value="Анкета гостя · Детали (еда/алкоголь/дети)">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_language" value="ru">
+      <input type="text" name="_gotcha" style="display:none">
       <input type="hidden" name="form_type" value="details-form">
+
+      <!-- Новый блок: Имя и Фамилия -->
+      <div class="details-row">
+        <div class="details-field">
+          <label for="details-first-name" class="form-label">Имя</label>
+          <input
+            class="input"
+            type="text"
+            id="details-first-name"
+            name="first_name"
+            placeholder="Ваше имя"
+            required
+          >
+        </div>
+        <div class="details-field">
+          <label for="details-last-name" class="form-label">Фамилия</label>
+          <input
+            class="input"
+            type="text"
+            id="details-last-name"
+            name="last_name"
+            placeholder="Ваша фамилия"
+            required
+          >
+        </div>
+      </div>
 
       <div class="details-block">
         <h3 class="details-question">
@@ -269,7 +294,7 @@
       <button type="submit" class="details-btn btn btn--light">
         отправить
       </button>
-      <p id="details-status" class="details-status status"></p>
+      <p id="details-status" class="details-status"></p>
     </form>
   </div>
 </section>
@@ -326,13 +351,12 @@
       id="rsvp-form"
       class="rsvp-form"
       method="POST"
-      action="https://formsubmit.co/ariadna.ad.libitum@gmail.com"
+      action="https://formspree.io/f/mkopllen"
       enctype="multipart/form-data"
     >
-      <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_subject" value="Анкета гостя · RSVP ответ">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_language" value="ru">
+      <input type="text" name="_gotcha" style="display:none">
       <input type="hidden" name="form_type" value="rsvp-form">
 
       <div class="rsvp-row">
