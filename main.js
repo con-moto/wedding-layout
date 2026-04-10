@@ -1,5 +1,3 @@
-// main.js
-
 document.addEventListener('DOMContentLoaded', () => {
   initRsvpForm();
   initDetailsForm();
@@ -8,7 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* =========================
-   RSVP FORM (Formspree)
+   HELPERS: Formspark submit
+   ========================= */
+
+const FORMSPARK_URL = 'https://submit-form.com/XGrUy5Fs0';
+
+function formDataToJson(formData) {
+  const obj = {};
+  for (const [key, value] of formData.entries()) {
+    if (key.endsWith('[]')) {
+      const cleanKey = key.slice(0, -2);
+      if (!obj[cleanKey]) obj[cleanKey] = [];
+      obj[cleanKey].push(value);
+    } else if (obj[key] !== undefined) {
+      if (!Array.isArray(obj[key])) obj[key] = [obj[key]];
+      obj[key].push(value);
+    } else {
+      obj[key] = value;
+    }
+  }
+  return JSON.stringify(obj);
+}
+
+/* =========================
+   RSVP FORM (Formspark)
    ========================= */
 function initRsvpForm() {
   const form = document.getElementById('rsvp-form');
@@ -25,12 +46,13 @@ function initRsvpForm() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch(form.action, {
-        method: form.method || 'POST',
-        body: formData,
+      const response = await fetch(FORMSPARK_URL, {
+        method: 'POST',
         headers: {
-          Accept: 'application/json'
-        }
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: formDataToJson(formData),
       });
 
       if (response.ok) {
@@ -51,7 +73,7 @@ function initRsvpForm() {
 }
 
 /* =========================
-   DETAILS FORM (Formspree)
+   DETAILS FORM (Formspark)
    ========================= */
 function initDetailsForm() {
   const form = document.getElementById('details-form');
@@ -68,12 +90,13 @@ function initDetailsForm() {
     const formData = new FormData(form);
 
     try {
-      const response = await fetch(form.action, {
-        method: form.method || 'POST',
-        body: formData,
+      const response = await fetch(FORMSPARK_URL, {
+        method: 'POST',
         headers: {
-          Accept: 'application/json'
-        }
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: formDataToJson(formData),
       });
 
       if (response.ok) {
