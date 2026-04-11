@@ -110,7 +110,6 @@
   --gap-5xl: 40px;
 }
 
-
 /* GLOBAL RESET & BASE */
 
 * {
@@ -130,7 +129,6 @@ a {
   text-decoration: none;
 }
 
-
 /* GENERIC LAYOUT UTILITIES */
 
 .wrapper {
@@ -138,8 +136,12 @@ a {
   margin: 0 auto;
 }
 
+/* увеличенные одинаковые боковые отступы у всех секций [web:54] */
 .section {
-  padding: var(--layout-section-padding-y) var(--layout-section-padding-x);
+  padding-top: var(--layout-section-padding-y);
+  padding-bottom: var(--layout-section-padding-y);
+  padding-left: max(var(--layout-section-padding-x), 8vw);
+  padding-right: max(var(--layout-section-padding-x), 8vw);
 }
 
 .section--dark {
@@ -155,7 +157,6 @@ a {
   background: rgba(255, 255, 255, 0.75);
 }
 
-
 /* GENERIC TEXT/LAYOUT UTILITIES */
 
 .text-center {
@@ -169,7 +170,6 @@ a {
 .max-w-wide {
   max-width: var(--layout-max-width-wide);
 }
-
 
 /* SECTION TYPOGRAPHY */
 
@@ -203,7 +203,6 @@ a {
   max-width: 520px;
   margin: 0 auto 32px;
 }
-
 
 /* GENERIC BUTTONS */
 
@@ -254,7 +253,6 @@ a {
   box-shadow: var(--shadow-btn-active);
 }
 
-
 /* FORM ELEMENTS */
 
 .input {
@@ -299,7 +297,6 @@ a {
   color: var(--color-text-main);
 }
 
-
 /* STATUS TEXT */
 
 .status {
@@ -314,7 +311,6 @@ a {
 .status--error {
   color: var(--color-error);
 }
-
 
 /* HERO */
 
@@ -430,7 +426,6 @@ a {
   color: var(--color-text-dark);
 }
 
-
 /* HERO BUTTON */
 
 .hero-button-wrap {
@@ -474,7 +469,6 @@ a {
 .hero-button:active {
   transform: translateY(0);
 }
-
 
 /* NAVIGATION */
 
@@ -559,7 +553,6 @@ a {
 .nav-toggle.open .nav-toggle-bar:nth-child(3) {
   transform: translateY(-6px) rotate(-45deg);
 }
-
 
 /* COUNTDOWN SECTION */
 
@@ -650,7 +643,6 @@ a {
   color: var(--color-primary-strong);
 }
 
-
 /* STORY */
 
 #story .wrapper {
@@ -687,7 +679,6 @@ a {
   border-radius: var(--radius-lg);
   object-fit: cover;
 }
-
 
 /* SCHEDULE */
 
@@ -727,7 +718,6 @@ a {
   text-align: left;
 }
 
-
 /* STATIC LINE BACKGROUND */
 
 .line {
@@ -742,7 +732,6 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 
 /* VIDEO LINE */
 
@@ -787,8 +776,7 @@ a {
   color: var(--color-text-contrast);
 }
 
-
-/* NOTES */
+/* NOTES (включая пожелания) */
 
 .notes {
   display: flex;
@@ -808,12 +796,19 @@ a {
   margin-bottom: 4px;
 }
 
+/* размер текста пожеланий как у section-lead, в том числе на мобилке */
+#wishes .note-text {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  color: var(--color-text-contrast);
+}
+
 .note-text {
   margin: 0;
   font-size: var(--font-size-lg);
   line-height: 1.7;
 }
-
 
 /* RSVP */
 
@@ -881,7 +876,6 @@ a {
   align-self: flex-start;
 }
 
-
 /* PROGRAM GRID */
 
 .program-grid {
@@ -917,7 +911,6 @@ a {
   letter-spacing: var(--letter-spacing-base);
   font-size: 11px;
 }
-
 
 /* TIMELINE */
 
@@ -1020,7 +1013,6 @@ a {
   }
 }
 
-
 /* DRESS CODE */
 
 .dresscode {
@@ -1059,19 +1051,23 @@ a {
   gap: 25px;
 }
 
+/* всегда одна строка + адаптивные размеры кругов [web:1][web:2][web:3][web:39] */
 .dress-palette {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 16px;
+  overflow-x: auto;
+  padding-block: 4px;
 }
 
 .dress-color {
-  width: 75px;
-  height: 75px;
+  width: clamp(44px, 10vw, 72px);
+  height: clamp(44px, 10vw, 72px);
   border-radius: 50%;
   border: 2px solid var(--color-bg-card);
   box-shadow: 0 0 0 1px var(--color-border-soft);
+  flex: 0 0 auto;
 }
 
 .dress-color--1 {
@@ -1100,7 +1096,6 @@ a {
   max-width: 420px;
   text-align: center;
 }
-
 
 /* DETAILS */
 
@@ -1260,7 +1255,6 @@ a {
   color: var(--color-error);
 }
 
-
 /* DESIGN AUTHORS FOOTER */
 
 .design-authors {
@@ -1316,7 +1310,6 @@ a {
   fill: var(--color-text-contrast);
   transform: translateY(-1px);
 }
-
 
 /* RESPONSIVE MEDIA QUERIES */
 
@@ -1386,6 +1379,12 @@ a {
   .nav-link {
     padding: 6px 0;
   }
+
+  /* уменьшить вертикальный отступ секций на 50% на мобайле [web:7][web:41] */
+  .section {
+    padding-top: calc(var(--layout-section-padding-y) / 2);
+    padding-bottom: calc(var(--layout-section-padding-y) / 2);
+  }
 }
 
 @media (max-width: 1280px) {
@@ -1425,8 +1424,9 @@ a {
     padding: 56px 16px 52px;
   }
 
+  /* пожелания: шрифт такой же, как у section-lead */
   .note-text {
-    font-size: 14px;
+    font-size: var(--font-size-lg);
   }
 
   .rsvp-row {
@@ -1445,7 +1445,6 @@ a {
     font-size: var(--font-size-md);
   }
 
-  /* имя/фамилия в одну колонку */
   .details-row {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1573,6 +1572,13 @@ a {
 
   .timeline-text {
     font-size: var(--font-size-md);
+  }
+}
+
+/* 40% меньше верхний паддинг у timeline при ширине 590 и ниже */
+@media (max-width: 590px) {
+  #timeline {
+    padding-top: calc(var(--layout-section-padding-y-small) * 0.6);
   }
 }
 

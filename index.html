@@ -1,452 +1,545 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Приглашение на свадьбу · Анжелика и Артур</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="description" content="Приглашение на свадьбу" />
+  <meta property="og:title" content="Анжелика &amp; Артур" />
+  <meta property="og:url" content="https://con-moto.github.io/wedding-layout/" />
+  <meta property="og:image" content="./images/lovestory.png" />
+
   <link rel="icon" type="image/png" href="./images/favicon.png" />
   <link rel="stylesheet" href="./fonts/fonts.css" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
-<header class="hero" id="hero">
-  <video
-    class="hero-video"
-    src="./images/file (4).mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    aria-hidden="true"
-  ></video>
+  <header class="hero" id="hero">
+    <video
+      class="hero-video"
+      src="./images/file (4).mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    ></video>
 
-  <div class="hero-inner">
-    <div class="hero-date">22 · 06 · 2022</div>
-    <div class="hero-label">Приглашение на свадьбу</div>
+    <div class="hero-inner">
+      <div class="hero-date">22 · 06 · 2022</div>
+      <div class="hero-label">Приглашение на свадьбу</div>
 
-    <div class="hero-names-wrapper">
-      <h1 class="hero-names hero-names--left">Анжелика</h1>
-      <span class="hero-amp hero-amp--inline">&amp;</span>
-      <h1 class="hero-names hero-names--right">Артур</h1>
+      <div class="hero-names-wrapper">
+        <h1 class="hero-names hero-names--left">Анжелика</h1>
+        <span class="hero-amp hero-amp--inline">&amp;</span>
+        <h1 class="hero-names hero-names--right">Артур</h1>
+      </div>
+
+      <p class="hero-text">
+        Мы счастливы поделиться с вами нашим большим днём. Пожалуйста, разделите с нами
+        этот тёплый вечер, чтобы он навсегда остался в наших сердцах.
+      </p>
+
+      <div class="hero-button-wrap">
+        <svg
+          class="hero-button-frame"
+          aria-hidden="true"
+          width="256"
+          height="114"
+          viewBox="0 0 256 114"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <use href="./images/Vector.svg#frame-flower"></use>
+        </svg>
+
+        <button
+          class="hero-button"
+          type="button"
+          onclick="document.getElementById('story').scrollIntoView({ behavior: 'smooth' });"
+        >
+          Подробнее
+        </button>
+      </div>
     </div>
+  </header>
 
-    <p class="hero-text">
-      Мы счастливы поделиться с вами нашим большим днём. Пожалуйста, разделите с нами этот тёплый вечер, чтобы он навсегда остался в наших сердцах.
-    </p>
-
-    <div class="hero-button-wrap">
-      <svg class="hero-button-frame" aria-hidden="true" width="256" height="114" viewBox="0 0 256 114" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <use href="./images/Vector.svg#frame-flower"></use>
-      </svg>
-
+  <nav class="nav" id="main-nav">
+    <div class="nav-inner">
       <button
-        class="hero-button"
-        onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'});"
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
       >
-        Подробнее
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
       </button>
-    </div>
-  </div>
-</header>
 
-<nav class="nav" id="main-nav">
-  <div class="nav-inner">
-    <button class="nav-toggle" id="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-    </button>
-
-    <div class="nav-links" id="nav-links">
-      <a href="#hero" class="nav-link">Главная</a>
-      <a href="#countdown" class="nav-link">Когда</a>
-      <a href="#story" class="nav-link">Love Story</a>
-      <a href="#schedule" class="nav-link">Программа</a>
-      <a href="#dresscode" class="nav-link">Dress code</a>
-      <a href="#details" class="nav-link">Детали</a>
-      <a href="#wishes" class="nav-link">Пожелания</a>
-      <a href="#rsvp" class="nav-link">Ответить</a>
-    </div>
-  </div>
-</nav>
-
-<section class="countdown-section" id="countdown">
-  <div class="wrapper">
-    <div class="countdown-inner">
-      <div class="countdown-label">До дня свадьбы осталось</div>
-      <div class="countdown-grid" id="countdown-grid">
-        <div class="countdown-item">
-          <span class="countdown-number" id="countdown-days">0</span>
-          <span class="countdown-text">дней</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="countdown-hours">0</span>
-          <span class="countdown-text">часов</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="countdown-minutes">0</span>
-          <span class="countdown-text">минут</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-number" id="countdown-seconds">0</span>
-          <span class="countdown-text">секунд</span>
-        </div>
-      </div>
-      <div class="countdown-note" id="countdown-message"></div>
-    </div>
-  </div>
-</section>
-
-<section id="story" class="section">
-  <div class="wrapper story-inner">
-    <div class="story-text">
-      <div class="section-title">История нашей любви</div>
-      <h2 class="section-heading">Как всё началось</h2>
-      <p class="section-lead">
-        Пять лет назад в осенний вечер мы случайно встретились в парке. Дождь не стал помехой, а стал началом истории, которую хотим разделить с вами.
-      </p>
-    </div>
-
-    <div class="story-image-wrap">
-      <img class="lovestory-image" src="./images/lovestory.png" alt="Наша история">
-    </div>
-  </div>
-</section>
-
-<section id="schedule" class="section">
-  <div class="wrapper schedule-inner">
-    <div class="schedule-image-wrap">
-      <img class="schedule-image" src="./images/champaign.png" alt="День свадьбы">
-    </div>
-
-    <div class="schedule-text">
-      <div class="section-title">Программа</div>
-      <h2 class="section-heading">День свадьбы</h2>
-      <p class="section-lead">
-        Ниже — расписание, чтобы вы могли спланировать свой день и быть рядом в самые важные моменты.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section id="timeline" class="section">
-  <div class="wrapper max-w-wide">
-    <div class="timeline-grid">
-      <article class="timeline-card">
-        <div class="timeline-time">09:00 – 09:30</div>
-        <h3 class="timeline-title">Сбор гостей</h3>
-        <p class="timeline-tag">Встреча</p>
-        <p class="timeline-text">Сквер у дома невесты, ул. Некрасовская, 59.</p>
-      </article>
-
-      <article class="timeline-card">
-        <div class="timeline-time">11:00 – 11:30</div>
-        <h3 class="timeline-title">Церемония</h3>
-        <p class="timeline-tag">Регистрация</p>
-        <p class="timeline-text">Дворец бракосочетания, Харитоньевский пер., 10.</p>
-      </article>
-
-      <article class="timeline-card">
-        <div class="timeline-time">16:00 – 22:00</div>
-        <h3 class="timeline-title">Праздничный вечер</h3>
-        <p class="timeline-tag">Банкет</p>
-        <p class="timeline-text">Ресторан Sabor de la Vida, ул. 1905 года, 10.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="dresscode" class="dresscode section--card-bg">
-  <div class="wrapper">
-    <div class="section-title">Dress code</div>
-    <h2 class="section-heading">Цвета нашего дня</h2>
-    <div class="dress-row">
-      <p class="dress-note max-w-narrow text-center">
-        Нам будет особенно приятно, если в своих образах вы поддержите мягкую, тёплую палитру нашей свадьбы — пастельные оттенки, нюдовые тона и немного золотого сияния.
-      </p>
-      <div class="dress-palette">
-        <div class="dress-color dress-color--1"></div>
-        <div class="dress-color dress-color--2"></div>
-        <div class="dress-color dress-color--3"></div>
-        <div class="dress-color dress-color--4"></div>
-        <div class="dress-color dress-color--5"></div>
+      <div class="nav-links" id="nav-links">
+        <a href="#hero" class="nav-link">Главная</a>
+        <a href="#schedule" class="nav-link">Программа</a>
+        <a href="#timeline" class="nav-link">Timeline</a>
+        <a href="#dresscode" class="nav-link">Dress code</a>
+        <a href="#details" class="nav-link">Детали</a>
+        <a href="#rsvp" class="nav-link">Ответить</a>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section class="details section--dark" id="details">
-  <div class="wrapper">
-    <p class="section-title">детали</p>
-    <h2 class="section-heading">Дополнительные вопросы</h2>
-
-    <form
-      id="details-form"
-      class="details-form"
-      method="POST"
-      action="https://submit-form.com/XGrUy5Fs0"
-      enctype="multipart/form-data"
-    >
-      <input type="hidden" name="_subject" value="Анкета гостя · Детали (еда/алкоголь/дети)">
-      <input type="hidden" name="_language" value="ru">
-      <input type="text" name="_gotcha" style="display:none">
-      <input type="hidden" name="form_type" value="details-form">
-
-      <div class="details-row">
-        <div class="details-field">
-          <label for="details-first-name" class="form-label">Имя</label>
-          <input
-            class="input"
-            type="text"
-            id="details-first-name"
-            name="first_name"
-            placeholder="Ваше имя"
-            required
-          >
+  <section class="countdown-section" id="countdown">
+    <div class="wrapper">
+      <div class="countdown-inner">
+        <div class="countdown-label">До дня свадьбы осталось</div>
+        <div class="countdown-grid" id="countdown-grid">
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdown-days">0</span>
+            <span class="countdown-text">дней</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdown-hours">0</span>
+            <span class="countdown-text">часов</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdown-minutes">0</span>
+            <span class="countdown-text">минут</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-number" id="countdown-seconds">0</span>
+            <span class="countdown-text">секунд</span>
+          </div>
         </div>
-        <div class="details-field">
-          <label for="details-last-name" class="form-label">Фамилия</label>
-          <input
-            class="input"
-            type="text"
-            id="details-last-name"
-            name="last_name"
-            placeholder="Ваша фамилия"
-            required
-          >
-        </div>
+        <div class="countdown-note" id="countdown-message"></div>
       </div>
+    </div>
+  </section>
 
-      <div class="details-block">
-        <h3 class="details-question">
-          Есть ли у вас особые предпочтения по еде
-        </h3>
-        <div class="details-options">
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="нет" checked>
-            <span>нет</span>
-          </label>
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="не ем мясо">
-            <span>не ем мясо</span>
-          </label>
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="не ем рыбу">
-            <span>не ем рыбу</span>
-          </label>
-          <label class="details-option">
-            <input type="radio" name="food_preference" value="вегетарианец">
-            <span>вегетарианец</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="details-block">
-        <h3 class="details-question">
-          Какой алкоголь вы предпочитаете?
-        </h3>
-        <div class="details-options">
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Красное вино">
-            <span>Красное вино</span>
-          </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Белое вино">
-            <span>Белое вино</span>
-          </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Шампанское">
-            <span>Шампанское</span>
-          </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Виски/коньяк">
-            <span>Виски/коньяк</span>
-          </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Водка">
-            <span>Водка</span>
-          </label>
-          <label class="details-option">
-            <input type="checkbox" name="alcohol[]" value="Не буду пить алкоголь">
-            <span>Не буду пить алкоголь</span>
-          </label>
-        </div>
-      </div>
-
-      <div class="details-block">
-        <h3 class="details-question">
-          Будет ли с вами на празднике ребенок?
-        </h3>
-        <div class="details-options">
-          <label class="details-option">
-            <input type="radio" name="child" value="Да">
-            <span>Да</span>
-          </label>
-          <label class="details-option">
-            <input type="radio" name="child" value="Нет" checked>
-            <span>Нет</span>
-          </label>
-        </div>
-      </div>
-
-      <button type="submit" class="details-btn btn btn--light">
-        отправить
-      </button>
-      <p id="details-status" class="details-status"></p>
-    </form>
-  </div>
-</section>
-
-<section class="video-line" id="wishes">
-  <video
-    class="video-line__video"
-    src="./images/file.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-  ></video>
-
-  <div class="video-line__overlay"></div>
-
-  <div class="video-line__inner">
-    <h2 class="section-heading section-heading--light">пожелания</h2>
-
-    <div class="notes">
-      <article class="note">
-        <div class="note-number">1</div>
-        <p class="note-text">
-          Чтобы наши руки были свободны для объятий, будем рады лёгким подаркам в конвертах.
+  <section id="story" class="section">
+    <div class="wrapper story-inner">
+      <div class="story-text">
+        <div class="section-title">История нашей любви</div>
+        <h2 class="section-heading">Как всё началось</h2>
+        <p class="section-lead">
+          Пять лет назад в осенний вечер мы случайно встретились в парке. Дождь не стал помехой,
+          а стал началом истории, которую хотим разделить с вами.
         </p>
-      </article>
-
-      <article class="note">
-        <div class="note-number">2</div>
-        <p class="note-text">
-          Будем благодарны, если вы воздержитесь от криков «Горько» на празднике, ведь поцелуй — это знак выражения чувств, он не может быть по заказу.
-        </p>
-      </article>
-
-      <article class="note">
-        <div class="note-number">3</div>
-        <p class="note-text">
-          Для наших маленьких гостей мы предусмотрели аниматора, чтобы родители смогли насладиться праздником. Пожалуйста, пройдите опрос, чтобы мы смогли посчитать, сколько детей будет на празднике.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="rsvp" class="rsvp section">
-  <div class="wrapper">
-    <div class="section-title">Ответ на приглашение</div>
-    <h2 class="section-heading">форма гостя</h2>
-    <p class="section-lead">
-      Мы будем очень рады видеть вас рядом. Пожалуйста, заполните форму ниже, чтобы подтвердить своё присутствие на нашей свадьбе. Это поможет нам лучше подготовиться к празднику.
-    </p>
-
-    <form
-      id="rsvp-form"
-      class="rsvp-form"
-      method="POST"
-      action="https://submit-form.com/XGrUy5Fs0"
-      enctype="multipart/form-data"
-    >
-      <input type="hidden" name="_subject" value="Анкета гостя · RSVP ответ">
-      <input type="hidden" name="_language" value="ru">
-      <input type="text" name="_gotcha" style="display:none">
-      <input type="hidden" name="form_type" value="rsvp-form">
-
-      <div class="rsvp-row">
-        <div class="rsvp-field">
-          <label for="field-name" class="form-label">Имя</label>
-          <input
-            class="input"
-            type="text"
-            id="field-name"
-            name="first_name"
-            placeholder="Ваше имя"
-            required
-          >
-        </div>
-        <div class="rsvp-field">
-          <label for="field-surname" class="form-label">Фамилия</label>
-          <input
-            class="input"
-            type="text"
-            id="field-surname"
-            name="last_name"
-            placeholder="Ваша фамилия"
-            required
-          >
-        </div>
       </div>
 
-      <div class="rsvp-field">
-        <span class="rsvp-label">Вы сможете присутствовать?</span>
-        <div class="rsvp-options">
-          <label class="rsvp-option">
+      <div class="story-image-wrap">
+        <img
+          class="lovestory-image"
+          src="./images/lovestory.png"
+          alt="Наша история"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="section">
+    <div class="wrapper schedule-inner">
+      <div class="schedule-image-wrap">
+        <img
+          class="schedule-image"
+          src="./images/champaign.png"
+          alt="День свадьбы"
+        />
+      </div>
+
+      <div class="schedule-text">
+        <div class="section-title">Программа</div>
+        <h2 class="section-heading">День свадьбы</h2>
+        <p class="section-lead">
+          Ниже — расписание, чтобы вы могли спланировать свой день и быть рядом
+          в самые важные моменты.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="section">
+    <div class="wrapper max-w-wide">
+      <div class="timeline-grid">
+        <article class="timeline-card">
+          <div class="timeline-time">09:00 – 09:30</div>
+          <h3 class="timeline-title">Сбор гостей</h3>
+          <p class="timeline-tag">Встреча</p>
+          <p class="timeline-text">
+            Сквер у дома невесты, ул. Некрасовская, 59.
+          </p>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-time">11:00 – 11:30</div>
+          <h3 class="timeline-title">Церемония</h3>
+          <p class="timeline-tag">Регистрация</p>
+          <p class="timeline-text">
+            Дворец бракосочетания, Харитоньевский пер., 10.
+          </p>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-time">16:00 – 22:00</div>
+          <h3 class="timeline-title">Праздничный вечер</h3>
+          <p class="timeline-tag">Банкет</p>
+          <p class="timeline-text">
+            Ресторан Sabor de la Vida, ул. 1905 года, 10.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="dresscode" class="dresscode section--card-bg">
+    <div class="wrapper">
+      <div class="section-title">Dress code</div>
+      <h2 class="section-heading">Цвета нашего дня</h2>
+      <div class="dress-row">
+        <p class="dress-note max-w-narrow text-center">
+          Нам будет особенно приятно, если в своих образах вы поддержите мягкую, тёплую палитру
+          нашей свадьбы — пастельные оттенки, нюдовые тона и немного золотого сияния.
+        </p>
+        <div class="dress-palette">
+          <div class="dress-color dress-color--1"></div>
+          <div class="dress-color dress-color--2"></div>
+          <div class="dress-color dress-color--3"></div>
+          <div class="dress-color dress-color--4"></div>
+          <div class="dress-color dress-color--5"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details section--dark" id="details">
+    <div class="wrapper">
+      <p class="section-title">детали</p>
+      <h2 class="section-heading">Дополнительные вопросы</h2>
+
+      <form
+        id="details-form"
+        class="details-form"
+        method="POST"
+        action="https://submit-form.com/XGrUy5Fs0"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="Анкета гостя · Детали (еда/алкоголь/дети)"
+        />
+        <input type="hidden" name="_language" value="ru" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="form_type" value="details-form" />
+
+        <div class="details-row">
+          <div class="details-field">
+            <label for="details-first-name" class="form-label">Имя</label>
             <input
-              type="radio"
-              name="attendance"
-              value="Да, с радостью буду"
+              class="input"
+              type="text"
+              id="details-first-name"
+              name="first_name"
+              placeholder="Ваше имя"
               required
-            >
-            <span>Да, с радостью буду</span>
-          </label>
-          <label class="rsvp-option">
+            />
+          </div>
+          <div class="details-field">
+            <label for="details-last-name" class="form-label">Фамилия</label>
             <input
-              type="radio"
-              name="attendance"
-              value="К сожалению, не смогу"
-            >
-            <span>К сожалению, не смогу</span>
-          </label>
+              class="input"
+              type="text"
+              id="details-last-name"
+              name="last_name"
+              placeholder="Ваша фамилия"
+              required
+            />
+          </div>
         </div>
+
+        <div class="details-block">
+          <h3 class="details-question">
+            Есть ли у вас особые предпочтения по еде
+          </h3>
+          <div class="details-options">
+            <label class="details-option">
+              <input
+                type="radio"
+                name="food_preference"
+                value="нет"
+                checked
+              />
+              <span>нет</span>
+            </label>
+            <label class="details-option">
+              <input
+                type="radio"
+                name="food_preference"
+                value="не ем мясо"
+              />
+              <span>не ем мясо</span>
+            </label>
+            <label class="details-option">
+              <input
+                type="radio"
+                name="food_preference"
+                value="не ем рыбу"
+              />
+              <span>не ем рыбу</span>
+            </label>
+            <label class="details-option">
+              <input
+                type="radio"
+                name="food_preference"
+                value="вегетарианец"
+              />
+              <span>вегетарианец</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="details-block">
+          <h3 class="details-question">
+            Какой алкоголь вы предпочитаете?
+          </h3>
+          <div class="details-options">
+            <label class="details-option">
+              <input type="checkbox" name="alcohol[]" value="Красное вино" />
+              <span>Красное вино</span>
+            </label>
+            <label class="details-option">
+              <input type="checkbox" name="alcohol[]" value="Белое вино" />
+              <span>Белое вино</span>
+            </label>
+            <label class="details-option">
+              <input type="checkbox" name="alcohol[]" value="Шампанское" />
+              <span>Шампанское</span>
+            </label>
+            <label class="details-option">
+              <input type="checkbox" name="alcohol[]" value="Виски/коньяк" />
+              <span>Виски/коньяк</span>
+            </label>
+            <label class="details-option">
+              <input type="checkbox" name="alcohol[]" value="Водка" />
+              <span>Водка</span>
+            </label>
+            <label class="details-option">
+              <input
+                type="checkbox"
+                name="alcohol[]"
+                value="Не буду пить алкоголь"
+              />
+              <span>Не буду пить алкоголь</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="details-block">
+          <h3 class="details-question">
+            Будет ли с вами на празднике ребёнок?
+          </h3>
+          <div class="details-options">
+            <label class="details-option">
+              <input type="radio" name="child" value="Да" />
+              <span>Да</span>
+            </label>
+            <label class="details-option">
+              <input type="radio" name="child" value="Нет" checked />
+              <span>Нет</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="details-btn btn btn--light">
+          отправить
+        </button>
+        <p id="details-status" class="details-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="video-line" id="wishes">
+    <video
+      class="video-line__video"
+      src="./images/file.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
+
+    <div class="video-line__overlay"></div>
+
+    <div class="video-line__inner">
+      <h2 class="section-heading section-heading--light">пожелания</h2>
+
+      <div class="notes">
+        <article class="note">
+          <div class="note-number">1</div>
+          <p class="note-text">
+            Чтобы наши руки были свободны для объятий, будем рады лёгким
+            подаркам в конвертах.
+          </p>
+        </article>
+
+        <article class="note">
+          <div class="note-number">2</div>
+          <p class="note-text">
+            Будем благодарны, если вы воздержитесь от криков «Горько»
+            на празднике, ведь поцелуй — это знак выражения чувств,
+            он не может быть по заказу.
+          </p>
+        </article>
+
+        <article class="note">
+          <div class="note-number">3</div>
+          <p class="note-text">
+            Для наших маленьких гостей мы предусмотрели аниматора,
+            чтобы родители смогли насладиться праздником.
+            Пожалуйста, пройдите опрос, чтобы мы могли посчитать,
+            сколько детей будет на празднике.
+          </p>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <div class="rsvp-field">
-        <label for="field-message" class="form-label">Комментарий (по желанию)</label>
-        <textarea
-          class="textarea"
-          id="field-message"
-          name="message"
-          rows="3"
-          placeholder="Например: буду с +1, предпочтения по меню, время прибытия..."
-        ></textarea>
-      </div>
-
-      <input type="hidden" name="event" value="wedding-angelika-artur">
-
-      <button class="rsvp-btn btn btn--primary" type="submit">Отправить ответ</button>
-
-      <p class="rsvp-note">
-        Нажимая кнопку, вы отправите данные организатору через защищённый сервис форм.
+  <section id="rsvp" class="rsvp section">
+    <div class="wrapper">
+      <div class="section-title">Ответ на приглашение</div>
+      <h2 class="section-heading">форма гостя</h2>
+      <p class="section-lead">
+        Мы будем очень рады видеть вас рядом. Пожалуйста, заполните форму ниже,
+        чтобы подтвердить своё присутствие на нашей свадьбе.
+        Это поможет нам лучше подготовиться к празднику.
       </p>
 
-      <p class="rsvp-status status" id="rsvp-status" aria-live="polite"></p>
-    </form>
-  </div>
-</section>
+      <form
+        id="rsvp-form"
+        class="rsvp-form"
+        method="POST"
+        action="https://submit-form.com/XGrUy5Fs0"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="Анкета гостя · RSVP ответ"
+        />
+        <input type="hidden" name="_language" value="ru" />
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="form_type" value="rsvp-form" />
 
-<section class="design-authors">
-  <div class="design-authors__inner">
-    <span class="design-authors__text">
-      Дизайн свадебных сайтов —
-      <a href="https://t.me/GalinaBulgakova" target="_blank" class="design-authors__link">
-        @GalinaBulgakova
+        <div class="rsvp-row">
+          <div class="rsvp-field">
+            <label for="field-name" class="form-label">Имя</label>
+            <input
+              class="input"
+              type="text"
+              id="field-name"
+              name="first_name"
+              placeholder="Ваше имя"
+              required
+            />
+          </div>
+          <div class="rsvp-field">
+            <label for="field-surname" class="form-label">Фамилия</label>
+            <input
+              class="input"
+              type="text"
+              id="field-surname"
+              name="last_name"
+              placeholder="Ваша фамилия"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="rsvp-field">
+          <span class="rsvp-label">Вы сможете присутствовать?</span>
+          <div class="rsvp-options">
+            <label class="rsvp-option">
+              <input
+                type="radio"
+                name="attendance"
+                value="Да, с радостью буду"
+                required
+              />
+              <span>Да, с радостью буду</span>
+            </label>
+            <label class="rsvp-option">
+              <input
+                type="radio"
+                name="attendance"
+                value="К сожалению, не смогу"
+              />
+              <span>К сожалению, не смогу</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="rsvp-field">
+          <label for="field-message" class="form-label">
+            Комментарий (по желанию)
+          </label>
+          <textarea
+            class="textarea"
+            id="field-message"
+            name="message"
+            rows="3"
+            placeholder="Например: буду с +1, предпочтения по меню, время прибытия..."
+          ></textarea>
+        </div>
+
+        <input type="hidden" name="event" value="wedding-angelika-artur" />
+
+        <button class="rsvp-btn btn btn--primary" type="submit">
+          Отправить ответ
+        </button>
+
+        <p class="rsvp-note">
+          Нажимая кнопку, вы отправите данные организатору через защищённый сервис форм.
+        </p>
+
+        <p class="rsvp-status status" id="rsvp-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="design-authors">
+    <div class="design-authors__inner">
+      <span class="design-authors__text">
+        Дизайн свадебных сайтов —
+        <a
+          href="https://t.me/GalinaBulgakova"
+          target="_blank"
+          class="design-authors__link"
+        >
+          @GalinaBulgakova
+        </a>
+      </span>
+
+      <a
+        href="https://t.me/GalinaBulgakova"
+        target="_blank"
+        class="design-authors__icon-link"
+        aria-label="Telegram Galina Bulgakova"
+      >
+        <svg
+          class="design-authors__icon"
+          viewBox="0 0 16 16"
+          aria-hidden="true"
+        >
+          <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+          ></path>
+        </svg>
       </a>
-    </span>
+    </div>
+  </section>
 
-    <a href="https://t.me/GalinaBulgakova" target="_blank" class="design-authors__icon-link" aria-label="Telegram Galina Bulgakova">
-      <svg class="design-authors__icon" viewBox="0 0 16 16" aria-hidden="true">
-        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
-      </svg>
-    </a>
-  </div>
-</section>
-
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
