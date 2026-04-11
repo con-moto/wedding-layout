@@ -53,8 +53,6 @@
   --font-family-accent: "Czizh-Body", sans-serif;
   --font-family-serif: "Georgia", "Times New Roman", serif;
 
-  --font-size-xs: 12px;
-  --font-size-sm: 13px;
   --font-size-base: 14px;
   --font-size-md: 16px;
   --font-size-lg: 18px;
@@ -136,7 +134,7 @@ a {
   margin: 0 auto;
 }
 
-/* увеличенные одинаковые боковые отступы у всех секций [web:54] */
+/* увеличенные одинаковые боковые отступы у всех секций */
 .section {
   padding-top: var(--layout-section-padding-y);
   padding-bottom: var(--layout-section-padding-y);
@@ -213,7 +211,7 @@ a {
   padding: 11px 26px;
   border-radius: var(--radius-full);
   border: none;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   cursor: pointer;
@@ -276,7 +274,7 @@ a {
   padding: 10px 12px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--color-border-soft);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   resize: vertical;
   min-height: 80px;
   outline: none;
@@ -301,7 +299,7 @@ a {
 
 .status {
   margin-top: 10px;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
 }
 
 .status--success {
@@ -375,7 +373,7 @@ a {
 .hero-date {
   letter-spacing: var(--letter-spacing-hero-date);
   text-transform: uppercase;
-  font-size: var(--font-size-hero-date);
+  font-size: var(--font-size-lg);
   color: var(--color-text-main);
   font-weight: 700;
   margin-bottom: 0;
@@ -595,7 +593,7 @@ a {
 }
 
 .countdown-label {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--color-text-muted);
@@ -629,7 +627,7 @@ a {
 .countdown-text {
   display: block;
   margin-top: 6px;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(46, 42, 38, 0.78);
@@ -638,9 +636,10 @@ a {
 .countdown-note {
   margin-top: 0;
   font-family: var(--font-family-accent);
-  font-size: 24px;
-  line-height: 1.6;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.4;
   color: var(--color-primary-strong);
+  white-space: nowrap;
 }
 
 /* STORY */
@@ -863,7 +862,7 @@ a {
 }
 
 .rsvp-option span {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: 400;
 }
 
@@ -885,7 +884,7 @@ a {
 }
 
 .program-step-title {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-base);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   color: var(--color-primary-strong);
@@ -901,7 +900,7 @@ a {
 .program-row {
   display: flex;
   justify-content: space-between;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   margin-bottom: 4px;
   color: var(--color-text-muted);
 }
@@ -965,7 +964,7 @@ a {
   border: 1px solid var(--color-border-tint);
   box-shadow: 0 12px 30px var(--color-shadow-strong);
   font-family: var(--font-family-main);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   letter-spacing: var(--letter-spacing-chip);
   text-transform: uppercase;
 }
@@ -1018,7 +1017,8 @@ a {
 .dresscode {
   position: relative;
   background-color: var(--color-bg-card);
-  padding-block: 85px;
+  padding-top: 85px;
+  padding-bottom: 85px;
 }
 
 .dresscode::before {
@@ -1051,7 +1051,7 @@ a {
   gap: 25px;
 }
 
-/* всегда одна строка + адаптивные размеры кругов [web:1][web:2][web:3][web:39] */
+/* всегда одна строка + адаптивные размеры кругов */
 .dress-palette {
   display: flex;
   flex-wrap: nowrap;
@@ -1146,7 +1146,7 @@ a {
 /* label + input внутри тёмной секции */
 
 .details .form-label {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
   font-weight: 600;
   letter-spacing: var(--letter-spacing-tight);
   text-transform: uppercase;
@@ -1179,10 +1179,13 @@ a {
   margin-top: 26px;
 }
 
+/* вопросы и опции формы крупнее, но с меньшей жирностью */
+
 .details-question {
   margin: 0 0 14px;
   font-family: var(--font-family-main);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-3xl);
+  font-weight: 400;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.82);
 }
@@ -1197,7 +1200,7 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-lg);
   color: rgba(255, 255, 255, 0.82);
 }
 
@@ -1275,7 +1278,7 @@ a {
   align-items: center;
   gap: 10px;
   color: rgba(255, 255, 255, 0.86);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-md);
 }
 
 .design-authors__text {
@@ -1313,146 +1316,6 @@ a {
 
 /* RESPONSIVE MEDIA QUERIES */
 
-@media (max-width: 720px) {
-  .hero {
-    padding: 32px 16px 48px;
-  }
-
-  .hero-date {
-    font-size: 22px;
-    letter-spacing: 0.18em;
-  }
-
-  .hero-label {
-    font-size: var(--font-size-label);
-    letter-spacing: 0.18em;
-    margin-top: -10px;
-  }
-
-  .hero-text {
-    font-size: var(--font-size-md);
-    padding: 0 4px;
-  }
-
-  .hero-names-wrapper {
-    flex-direction: column;
-  }
-
-  .hero-names--left,
-  .hero-names--right {
-    margin-right: 0;
-    margin-left: 0;
-  }
-
-  .nav-inner {
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .nav-toggle {
-    display: block;
-    position: relative;
-  }
-
-  .nav-links {
-    position: fixed;
-    inset: 56px 0 auto 0;
-    background: var(--color-nav-bg-mobile);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 16px 12px 20px;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: max-height 0.25s ease, opacity 0.2s ease;
-  }
-
-  .nav-links.open {
-    max-height: 260px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav-link {
-    padding: 6px 0;
-  }
-
-  /* уменьшить вертикальный отступ секций на 50% на мобайле [web:7][web:41] */
-  .section {
-    padding-top: calc(var(--layout-section-padding-y) / 2);
-    padding-bottom: calc(var(--layout-section-padding-y) / 2);
-  }
-}
-
-@media (max-width: 1280px) {
-  .countdown-section::before,
-  .countdown-section::after {
-    display: none;
-    content: none;
-  }
-
-  .dresscode::before,
-  .dresscode::after {
-    display: none;
-    content: none;
-  }
-}
-
-@media (max-width: 640px) {
-  .countdown-section {
-    padding: 64px 16px 72px;
-  }
-
-  .countdown-label {
-    margin-bottom: 16px;
-  }
-
-  .countdown-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 28px;
-    margin-bottom: 42px;
-  }
-
-  .video-line {
-    min-height: 50vh;
-  }
-
-  .video-line__inner {
-    padding: 56px 16px 52px;
-  }
-
-  /* пожелания: шрифт такой же, как у section-lead */
-  .note-text {
-    font-size: var(--font-size-lg);
-  }
-
-  .rsvp-row {
-    grid-template-columns: 1fr;
-  }
-
-  .details {
-    padding: 56px 16px 64px;
-  }
-
-  .details-form {
-    padding: 22px 18px 26px;
-  }
-
-  .details-question {
-    font-size: var(--font-size-md);
-  }
-
-  .details-row {
-    grid-template-columns: 1fr;
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-}
-
-/* story + schedule same behavior at <=1348px */
 @media (max-width: 1348px) {
   .story-inner {
     flex-direction: column;
@@ -1504,6 +1367,35 @@ a {
   }
 }
 
+@media (max-width: 1280px) {
+  .countdown-section::before,
+  .countdown-section::after {
+    display: none;
+    content: none;
+  }
+
+  .dresscode::before,
+  .dresscode::after {
+    display: none;
+    content: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  #timeline .wrapper {
+    max-width: var(--layout-max-width);
+  }
+
+  .timeline-grid {
+    gap: 36px;
+  }
+
+  .timeline-card {
+    inline-size: 100%;
+    max-inline-size: none;
+  }
+}
+
 @media (max-width: 900px) {
   .timeline-grid {
     grid-template-columns: 1fr;
@@ -1530,18 +1422,164 @@ a {
   }
 }
 
-@media (max-width: 1024px) {
-  #timeline .wrapper {
-    max-width: var(--layout-max-width);
+@media (max-width: 720px) {
+  .hero {
+    padding: 32px 16px 48px;
   }
 
-  .timeline-grid {
-    gap: 36px;
+  .hero-date {
+    font-size: 22px;
+    letter-spacing: 0.18em;
   }
 
-  .timeline-card {
-    inline-size: 100%;
-    max-inline-size: none;
+  .hero-label {
+    font-size: var(--font-size-label);
+    letter-spacing: 0.18em;
+    margin-top: -10px;
+  }
+
+  .hero-text {
+    font-size: var(--font-size-md);
+    padding: 0 4px;
+  }
+
+  .hero-names-wrapper {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-names--left,
+  .hero-names--right {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* амперсанд уменьшен на 25% и плотный line-height */
+  .hero-amp {
+    font-size: calc(clamp(32px, 8vw, 100px) * 0.75);
+    line-height: 0.8;
+  }
+
+  .hero-names {
+    line-height: 0.8;
+  }
+
+   .countdown-label {
+    font-size: var(--font-size-md);
+  }
+
+  .countdown-note {
+    font-size: var(--font-size-xl);
+  }
+
+  /* story heading меньше на адаптиве */
+  #story .section-heading {
+    font-size: var(--font-size-2xl);
+  }
+
+  /* уменьшенные section-title на мобильных */
+  .section-title {
+    font-size: var(--font-size-md);
+    letter-spacing: 0.18em;
+  }
+
+  #story .section-title {
+    font-size: var(--font-size-md);
+  }
+
+  .nav-inner {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: relative;
+  }
+
+  .nav-links {
+    position: fixed;
+    inset: 56px 0 auto 0;
+    background: var(--color-nav-bg-mobile);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 12px 20px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  .nav-links.open {
+    max-height: 260px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    padding: 6px 0;
+  }
+
+  /* уменьшить вертикальный отступ секций на 50% на мобайле */
+  .section {
+    padding-top: calc(var(--layout-section-padding-y) / 2);
+    padding-bottom: calc(var(--layout-section-padding-y) / 2);
+  }
+}
+
+@media (max-width: 640px) {
+  .countdown-section {
+    padding: 64px 16px 72px;
+  }
+
+  .countdown-label {
+    margin-bottom: 16px;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 28px;
+    margin-bottom: 42px;
+  }
+
+  .video-line {
+    min-height: 50vh;
+  }
+
+  .video-line__inner {
+    padding: 56px 16px 52px;
+  }
+
+  /* пожелания: шрифт такой же, как у section-lead */
+  .note-text {
+    font-size: var(--font-size-lg);
+  }
+
+  .rsvp-row {
+    grid-template-columns: 1fr;
+  }
+
+  .details {
+    padding: 56px 16px 64px;
+  }
+
+  .details-form {
+    padding: 22px 18px 26px;
+  }
+
+  .details-question {
+    font-size: var(--font-size-3xl);
+  }
+
+  .details-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 24px;
   }
 }
 
@@ -1559,7 +1597,7 @@ a {
     top: 18px;
     left: 20px;
     padding: 6px 14px;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
   }
 
   .timeline-time,
@@ -1592,5 +1630,13 @@ a {
     flex-direction: column;
     gap: 6px;
     text-align: center;
+  }
+}
+
+/* дополнительные отступы для текста dresscode на очень узких экранах */
+@media (max-width: 446px) {
+  .dress-note {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
