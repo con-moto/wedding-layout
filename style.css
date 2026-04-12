@@ -1466,7 +1466,7 @@ a {
     line-height: 0.8;
   }
 
-   .countdown-label {
+  .countdown-label {
     font-size: var(--font-size-md);
   }
 
@@ -1532,30 +1532,45 @@ a {
   }
 }
 
+/* 640 и ниже — 4 одинаковых прямоугольника в строку */
 @media (max-width: 640px) {
   .countdown-section {
-    padding: 64px 20px 72px; /* немного больше боковые отступы, чтобы note не лип */
-  }
-
-  .countdown-grid {
-    grid-template-columns: repeat(4, minmax(110px, 1fr));
-    column-gap: 20px;
-    row-gap: 0;
-    justify-content: flex-start;
-    padding-bottom: 4px; /* чтобы скролл не прилипал вплотную */
-  }
-
-  .countdown-inner {
-    padding: 0 4px; /* небольшой внутренний буфер для текста note */
+    padding: 64px 16px 72px;
   }
 
   .countdown-label {
     margin-bottom: 16px;
   }
 
-  .countdown-note {
-    padding: 0 4px; /* страховка, чтобы текст точно не касался краёв */
-    white-space: normal; /* оставляем переносы строк, чтобы текст выглядел аккуратно */
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 14px;
+    row-gap: 0;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .countdown-item {
+    min-width: 0;
+    width: 100%;
+    height: 96px;
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .countdown-number {
+    font-size: 24px;
+    letter-spacing: 0.13em;
+  }
+
+  .countdown-text {
+    margin-top: 6px;
+    font-size: 13px;
+    letter-spacing: 0.18em;
   }
 
   .video-line {
@@ -1566,7 +1581,6 @@ a {
     padding: 56px 16px 52px;
   }
 
-  /* пожелания: шрифт такой же, как у section-lead */
   .note-text {
     font-size: var(--font-size-lg);
   }
@@ -1594,6 +1608,7 @@ a {
   }
 }
 
+/* 600 и ниже — таймлайн и прочее */
 @media (max-width: 600px) {
   #timeline {
     padding: 72px 16px 80px;
@@ -1631,37 +1646,37 @@ a {
   }
 }
 
-/* От 520 и ниже: 4 колонки, которые в сумме не шире 100% */
+/* 520 и ниже — те же 4 в строку, но компактнее */
 @media (max-width: 520px) {
   .countdown-section {
     padding-left: 16px;
-    padding-right: 16px; /* чтобы было место слева/справа и для note */
+    padding-right: 16px;
   }
 
   .countdown-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* делим доступную ширину на 4 */
-    column-gap: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 8px;
     row-gap: 0;
-    max-width: 100%;
   }
 
   .countdown-item {
-    min-width: 0;           /* не даём блоку требовать фиксированную ширину */
-    padding: 14px 10px 12px;/* чуть меньше паддинги, чтобы всё влезло */
+    height: 78px;
+    padding: 10px 6px;
   }
 
   .countdown-number {
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: 0.12em;
   }
 
   .countdown-text {
-    font-size: var(--font-size-base);
-    letter-spacing: 0.14em;
+    margin-top: 4px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
   }
 
   .countdown-note {
-    padding: 0 4px; /* небольшой внутренний отступ, чтобы текст не лип */
+    padding: 0 4px;
   }
 }
 
@@ -1686,8 +1701,17 @@ a {
   }
 }
 
-@media (max-width: 400px) {
+/* 420 и ниже — countdown-note не шире 310 и крупнее, с переносами */
+@media (max-width: 420px) {
   .countdown-note {
-    padding: 0 8px;
+    max-width: 310px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
