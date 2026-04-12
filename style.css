@@ -1427,6 +1427,16 @@ a {
     padding: 32px 16px 48px;
   }
 
+  .hero::before {
+    width: 130px;
+    height: 130px;
+  }
+
+  .hero::after {
+    width: 160px;
+    height: 160px;
+  }
+
   .hero-date {
     font-size: 22px;
     letter-spacing: 0.18em;
