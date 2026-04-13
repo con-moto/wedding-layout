@@ -386,6 +386,12 @@ a {
   text-transform: uppercase;
   color: var(--color-primary-strong);
   margin-bottom: 0;
+  margin-block-end: 15%;
+}
+
+.hero-date,
+.hero-label {
+  margin-block-start: -5%;
 }
 
 .hero-names,
@@ -1095,6 +1101,11 @@ a {
   color: var(--color-text-dark);
   max-width: 420px;
   text-align: center;
+}
+
+.picture {
+  background: url("./images/picture.jpg") center / cover no-repeat;
+  block-size: 45vh;
 }
 
 /* DETAILS */
